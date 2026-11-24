@@ -11,7 +11,7 @@
     "build": "tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "start": "func start",
-    "test": "npm run build"
+    "test": "npm run build && node --test dist/test/payments.test.js"
   },
   "dependencies": {
     "@azure/functions": "^4.8.0"

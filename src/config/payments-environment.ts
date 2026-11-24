@@ -7,6 +7,7 @@ export interface PaymentEnvironmentConfig {
     clientId?: string;
     clientSecret?: string;
     baseUrl?: string;
+    webhookId?: string;
   };
   dataverse: {
     url?: string;
@@ -39,6 +40,7 @@ export function getPaymentEnvironmentConfig(
       clientId: getValue(environment, "PAYPAL_CLIENT_ID"),
       clientSecret: getValue(environment, "PAYPAL_CLIENT_SECRET"),
       baseUrl: getValue(environment, "PAYPAL_BASE_URL"),
+      webhookId: getValue(environment, "PAYPAL_WEBHOOK_ID"),
     },
     dataverse: {
       url: getValue(environment, "DATAVERSE_URL"),
@@ -47,6 +49,10 @@ export function getPaymentEnvironmentConfig(
       clientSecret: getValue(environment, "DATAVERSE_CLIENT_SECRET"),
     },
   };
+}
+
+export function getAllPaymentEnvironments(): PaymentEnvironmentConfig[] {
+  return environments.map(getPaymentEnvironmentConfig);
 }
 
 export function resolvePaymentEnvironment(origin: string | null): PaymentEnvironmentConfig | undefined {
