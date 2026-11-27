@@ -57,3 +57,7 @@ In each PayPal app, add a webhook to `https://<function-app>/api/paypal/webhook`
 ## Tests
 
 `npm test` builds and runs the unit tests with mocked PayPal and Dataverse.
+
+## Platform architecture
+
+This repo is one of nine in the SujeethFoundation org. The architecture docs live in the website repo's `architecture/` folder: [platform architecture](https://github.com/SujeethFoundation/sujeethfoundation.github.io/blob/main/architecture/platform-architecture.md), [data model and portal](https://github.com/SujeethFoundation/sujeethfoundation.github.io/blob/main/architecture/platform-data-model-and-portal.md) and [business architecture](https://github.com/SujeethFoundation/sujeethfoundation.github.io/blob/main/architecture/business-architecture.md). This repo is PayPal checkout for online courses. See "payments" in the platform architecture doc and the Online course tables in the data model doc. Each repo's README is listed in the platform architecture doc under "Repo READMEs".
